@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магазин Литой череп</title>
+    <link rel="stylesheet" href="laba333.css">
+</head>
+<body>
+    <div id="site-container">
+        <div id="header-container">
+            <div id="header">
+                <nav>
+                    <ul>
+                        <li><a href="#about">О магазине</a></li>
+                        <li><a href="#products">Товары</a></li>
+                        <li><a href="#reviews">Отзывы</a></li>
+                        <li><a href="#order">Форма заказа</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+            <img class="logo" src="C:\Users\1\Desktop\веб прог\логотипр.jpg" alt="Ваха логотип">
+        </div>
+    </div>
+    <section id="about">
+        <img class="about-image" src="C:\Users\1\Desktop\веб прог\описание.png" alt="Изображение по магазину литой череп">
+    </section>
+    <div id="main-block">
+        <div id="content-column">
+            <section id="products">
+                <h2>Наши товары</h2>
+
+                <div class="products-container">
+                    <div class="product">
+                        <img src="C:\Users\1\Desktop\веб прог\Тираниды.jpg" alt="Товар 1">
+                        <h3>Тираниды</h3>
+                        <p>Цена: 10000 руб.</p>
+                    </div>
+
+                    <div class="product">
+                        <img src="C:\Users\1\Desktop\веб прог\Некроны.jpg" alt="Товар 2">
+                        <h3>Некроны</h3>
+                        <p>Цена: 8 999 руб.</p>
+                    </div>
+
+                    <div class="product">
+                        <img src="C:\Users\1\Desktop\веб прог\Орки.jpg" alt="Товар 3">
+                        <h3>Орки</h3>
+                        <p>Цена: 7 000 руб.</p>
+                    </div>
+
+                    <div class="product">
+                        <img src="C:\Users\1\Desktop\веб прог\Эльдары.jpg" alt="Товар 4">
+                        <h3>Эльдары</h3>
+                        <p>Цена: 6 000 руб.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="reviews-section">
+                <h2>Отзывы</h2>
+                <div class="reviews-container">
+                    <div class="review">
+                        <div class="review-header">
+                            <span class="review-author">Валерий</span>
+                            <span class="review-rating">★★★★★</span>
+                        </div>
+                        <div class="review-date">03/09/2023, 12:16</div>
+                        <p class="review-text">Очень качественно,спасибо</p>
+                    </div>
+
+                    <div class="review">
+                        <div class="review-header">
+                            <span class="review-author">Иван</span>
+                            <span class="review-rating">★★★★</span>
+                        </div>
+                        <div class="review-date">22/07/2023, 19:44</div>
+                        <p class="review-text">Неплохо,но как по мне хрупковато</p>
+                    </div>
+
+                    <div class="review">
+                        <div class="review-header">
+                            <span class="review-author">Макс</span>
+                            <span class="review-rating">★★</span>
+                        </div>
+                        <div class="review-date">01/03/2023, 10:15</div>
+
+                        <p class="review-text">Пришел брак</p>
+                    </div>
+                </div>
+                <section id="video">
+                    <h2>Видео о наших товарах</h2>
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/FgSC8p7hG0o?si=_68hyj8YCBUCtUAi" 
+                    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+
+                </section>
+
+                <style>
+                </style>
+
+                <section id="timer">
+                    <h2>До конца акции осталось</h2>
+                    <div id="countdown">Обратный отсчёт...</div>
+
+                    <script>
+                        const targetDate = new Date('2025-12-31T23:59:59').getTime();
+                        function updateCountdown() {
+                            const now = new Date().getTime();
+                            const timeLeft = targetDate - now;
+                            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                            const countdownEl = document.getElementById('countdown');
+
+                            if (timeLeft <= 0) {
+                                countdownEl.innerHTML = "Время истекло!";
+                                clearInterval(interval);
+                            } else {
+                                countdownEl.innerHTML = `
+                                                            Осталось: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд
+                                                        `;
+                            }
+                        }
+                        const interval = setInterval(updateCountdown, 1000);
+                        updateCountdown();
+                    </script>
+
+                </section>
+
+
+                <section id="order">
+                    <h2>Форма заказа</h2>
+                    <form id="order-form">
+                        <label for="name">Имя</label>
+                        <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
+
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Введите вашу почту" required>
+
+                        <label for="address">Адрес</label>
+                        <textarea id="address" name="address" placeholder="Введите ваш адрес" required></textarea>
+
+                        <label for="product">Выберите продукт</label>
+                        <select id="product" name="product">
+                            <option value="product0">Выберите понравившийся товар</option>
+                            <option value="product1">Тираниды</option>
+                            <option value="product2">Некроны</option>
+                            <option value="product3">Орки</option>
+                            <option value="product4">Эльдары</option>
+                        </select>
+                        <button type="submit">Оформить заказ</button>
+                    </form>
+                </section>
+        </div>
+    </div>
+    <div id="footer">
+        <ul>
+            <p><a href="#">Скидки и акции</a></p>
+            <p><a href="#">Новые поступления</a></p>
+            <p>&copy; 2025 Литой череп. Все права защищены.</p>
+        </ul>
+    </div>
+    </div>
+</body>
+</html>
